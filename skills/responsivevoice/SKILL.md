@@ -4,7 +4,7 @@ description: 'Install and run ResponsiveVoice text-to-speech in a browser, on a 
 license: MIT
 metadata:
   author: responsivevoice
-  version: '1.0.0'
+  version: '1.1.0'
 ---
 
 # ResponsiveVoice Text-to-Speech
