@@ -31,24 +31,18 @@ non-cacheable requests.
 
 ### Parameters
 
-| Param    | Required             | Values                                                           |
-| -------- | -------------------- | ---------------------------------------------------------------- |
-| `text`   | yes                  | text to speak (plain or SSML on compatible engines)              |
-| `voice`  | one of voice / lang  | friendly name, e.g. `UK English Male`                            |
-| `lang`   | one of voice / lang  | BCP-47 code, e.g. `en-US`, `pt-BR`, `ja-JP`                      |
-| `engine` | no (default `g1`)    | `g1` `g2` `g3` `g5` (standard); `gwn` `msv` `oai` (premium BYOK) |
-| `gender` | no                   | `male` / `female` (used when no voice name given)                |
-| `pitch`  | no (default `1.0`)   | `0.0`–`2.0`                                                      |
-| `rate`   | no (default `1.0`)   | `0.0`–`2.0`                                                      |
-| `volume` | no (default `1.0`)   | `0.0`–`1.0` (`0` returns `204` with no audio body)               |
-| `format` | no (engine-specific) | `mp3` / `ogg` / `wav`                                            |
+| Param    | Required           | Values                                                                   |
+| -------- | ------------------ | ------------------------------------------------------------------------ |
+| `text`   | yes                | text to speak (max 4000 characters)                                      |
+| `voice`  | `voice` or `lang`  | a voice `name` from [`/v2/voices`](#list-voices), e.g. `UK English Male` |
+| `lang`   | `voice` or `lang`  | BCP-47 code, e.g. `en-US`, `pt-BR` — use when you pass no `voice`        |
+| `pitch`  | no (default `1.0`) | `0.0`–`2.0`                                                              |
+| `rate`   | no (default `1.0`) | `0.0`–`2.0`                                                              |
+| `volume` | no (default `1.0`) | `0.0`–`1.0` (`0` returns `204` with no audio body)                       |
 
-Format support per engine: `g1/g2/g3` → mp3 only; `g5` → ogg only; `gwn` → mp3, ogg;
-`msv`/`oai` → mp3, ogg, wav.
-
-Premium voices (Azure, OpenAI, Google Cloud) resolve by the same friendly `voice` name as
-standard voices — you do not need to set `engine` or a provider voice id; the server maps the
-name to the right engine. Set `engine` only to force a specific provider.
+Provide **either** `voice` or `lang`. `voice` is the friendly `name` returned by the voices
+endpoint; the server resolves it to the right voice. Use `lang` alone when you have no specific
+voice in mind.
 
 ## From a programming language
 
@@ -60,7 +54,7 @@ import requests
 
 resp = requests.get(
     "https://texttospeech.responsivevoice.org/v2/text/synthesize",
-    params={"text": "Hello world", "voice": "US English Female", "format": "mp3"},
+    params={"text": "Hello world", "voice": "US English Female"},
     headers={"X-API-Key": "YOUR_API_KEY", "X-API-Secret": "YOUR_API_SECRET"},
 )
 resp.raise_for_status()
@@ -73,13 +67,26 @@ response body to a file.
 
 ## List voices
 
+Fetch the catalog first, then synthesize with a voice's `name`. Each entry has a `name` (pass
+it as `voice`) and its `lang`:
+
 ```bash
 curl https://texttospeech.responsivevoice.org/v2/voices \
   -H 'X-API-Key: YOUR_API_KEY' \
   -H 'X-API-Secret: YOUR_API_SECRET'
 ```
 
-Also: `GET /v2/voices/{name}`, `GET /v2/voices/by-language/{lang}`.
+Response (one object per voice, other fields omitted):
+
+```json
+[
+  { "name": "UK English Female", "lang": "en-GB" },
+  { "name": "US English Male", "lang": "en-US" }
+]
+```
+
+Pick a `name` and pass it as the `voice` parameter to synthesize. Narrow the list with
+`GET /v2/voices/by-language/{lang}`, or fetch one with `GET /v2/voices/{name}`.
 
 ## More
 

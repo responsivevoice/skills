@@ -96,12 +96,11 @@ const client = new ResponsiveVoiceAPIClient({ apiKey: 'YOUR_API_KEY' });
 const audio = await client.synthesize({
   text: 'Hello, world!',
   voice: 'UK English Female',
-  format: 'mp3',
 });
 
 const el = new Audio(audio.url);
+el.onended = () => URL.revokeObjectURL(audio.url);
 el.play();
-URL.revokeObjectURL(audio.url);
 ```
 
 **On a server — add `apiSecret` (sent as `X-API-Key` / `X-API-Secret`; origin check skipped):**
