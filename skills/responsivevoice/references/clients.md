@@ -75,7 +75,6 @@ catalog. The browser library authenticates by origin; it never needs the API sec
 | `defaultVoice`   | `string`  | `'UK English Female'` |
 | `forceFallback`  | `boolean` | `false`               |
 | `characterLimit` | `number`  | `100`                 |
-| `transport`      | `string`  | `'chunks'`            |
 
 ## `@responsivevoice/api-client` — fetch audio (browser or server)
 

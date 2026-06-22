@@ -26,8 +26,7 @@ curl "https://texttospeech.responsivevoice.org/v2/text/synthesize?text=Hello+wor
 ```
 
 Prefer GET for deterministic requests; identical parameters always return identical audio,
-so it is safe for CDN edge caching. A `POST /v2/text/synthesize` with a JSON body exists for
-non-cacheable requests.
+so it is safe for CDN edge caching.
 
 ### Parameters
 
