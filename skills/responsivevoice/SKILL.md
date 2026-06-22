@@ -40,30 +40,36 @@ API secrets" in the [dashboard](https://app.responsivevoice.org).
 
 ## Quickstart (browser, demo mode — no key)
 
-```html
-<script src="https://cdn.responsivevoice.org/sdk/latest/responsivevoice.js"></script>
-<script>
-  responsiveVoice.init({});
-  responsiveVoice.speak('Hello world');
-</script>
+Install `@responsivevoice/core` and speak with the device's built-in voice — no account:
+
+```bash
+npm install @responsivevoice/core
+```
+
+```ts
+import { getResponsiveVoice } from '@responsivevoice/core';
+
+const rv = await getResponsiveVoice({});
+rv.speak('Hello world');
 ```
 
 Add `apiKey` and verify your domain to unlock the full catalog and named voices:
 
-```html
-<script src="https://cdn.responsivevoice.org/sdk/latest/responsivevoice.js"></script>
-<script>
-  responsiveVoice.init({ apiKey: 'YOUR_API_KEY' });
-  responsiveVoice.speak('Hello world', 'UK English Female');
-</script>
+```ts
+const rv = await getResponsiveVoice({ apiKey: 'YOUR_API_KEY' });
+rv.speak('Hello world', 'UK English Female');
 ```
+
+No build step? A prebuilt browser bundle is published — see
+[@responsivevoice/core → Browser bundle (CDN)](https://github.com/responsivevoice/core#browser-bundle-cdn)
+for the script-tag setup.
 
 ## Quickstart (server, REST API)
 
 ```bash
 curl "https://texttospeech.responsivevoice.org/v2/text/synthesize?text=Hello+world&voice=US+English+Female" \
-  -H 'X-API-Key: YOUR_API_KEY' \
-  -H 'X-API-Secret: YOUR_API_SECRET' \
+  -H "X-API-Key: $RV_API_KEY" \
+  -H "X-API-Secret: $RV_API_SECRET" \
   --output speech.mp3
 ```
 

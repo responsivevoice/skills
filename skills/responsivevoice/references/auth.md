@@ -33,8 +33,8 @@ ResponsiveVoice has three access modes. Pick by where your code runs.
 The REST API and SDKs send:
 
 ```
-X-API-Key: YOUR_API_KEY
-X-API-Secret: YOUR_API_SECRET
+X-API-Key: $RV_API_KEY
+X-API-Secret: $RV_API_SECRET
 ```
 
 In the generated SDKs the two schemes are named `apiKeyHeader` and `apiSecretHeader` — see

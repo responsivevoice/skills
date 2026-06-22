@@ -20,8 +20,8 @@ where to get the credentials.
 
 ```bash
 curl "https://texttospeech.responsivevoice.org/v2/text/synthesize?text=Hello+world&voice=US+English+Female" \
-  -H 'X-API-Key: YOUR_API_KEY' \
-  -H 'X-API-Secret: YOUR_API_SECRET' \
+  -H "X-API-Key: $RV_API_KEY" \
+  -H "X-API-Secret: $RV_API_SECRET" \
   --output speech.mp3
 ```
 
@@ -49,12 +49,14 @@ The endpoint returns raw audio bytes, so any HTTP client writes a file. Native l
 SDKs are coming soon; until then call the REST API directly. Python example:
 
 ```python
+import os
+
 import requests
 
 resp = requests.get(
     "https://texttospeech.responsivevoice.org/v2/text/synthesize",
     params={"text": "Hello world", "voice": "US English Female"},
-    headers={"X-API-Key": "YOUR_API_KEY", "X-API-Secret": "YOUR_API_SECRET"},
+    headers={"X-API-Key": os.environ["RV_API_KEY"], "X-API-Secret": os.environ["RV_API_SECRET"]},
 )
 resp.raise_for_status()
 with open("speech.mp3", "wb") as f:
@@ -71,8 +73,8 @@ it as `voice`) and its `lang`:
 
 ```bash
 curl https://texttospeech.responsivevoice.org/v2/voices \
-  -H 'X-API-Key: YOUR_API_KEY' \
-  -H 'X-API-Secret: YOUR_API_SECRET'
+  -H "X-API-Key: $RV_API_KEY" \
+  -H "X-API-Secret: $RV_API_SECRET"
 ```
 
 Response (one object per voice, other fields omitted):

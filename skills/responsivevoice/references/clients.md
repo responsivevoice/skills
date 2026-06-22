@@ -48,18 +48,17 @@ rv.speak('Hello world', 'UK English Female', {
 `getResponsiveVoice()` is the recommended async factory (creates the singleton and calls
 `init` internally). `rv.cancel()` stops all speech.
 
-### Install (CDN bundle)
+### Package CDNs (jsDelivr / unpkg) — ESM only
 
-The CDN build exposes a global `responsiveVoice` with the same methods as the npm instance
-(`init`, `speak`, `cancel`, `pause`, `resume`, `getVoices`, `isPlaying`):
+jsDelivr and unpkg serve the npm **ESM** build, not a global. Consume them exactly like the
+npm package — `import { getResponsiveVoice }` through the async-factory flow above — not as a
+`<script>` tag expecting a global `responsiveVoice`.
 
-```html
-<script src="https://cdn.responsivevoice.org/sdk/latest/responsivevoice.js"></script>
-<script>
-  responsiveVoice.init({ apiKey: 'YOUR_API_KEY' });
-  responsiveVoice.speak('Hello world', 'UK English Female');
-</script>
-```
+### Browser bundle (CDN, no build step)
+
+For an easy, legacy-compatible `<script>` that exposes a global `responsiveVoice` (`init`,
+`speak`, `cancel`, `pause`, `resume`, `getVoices`, `isPlaying`), see
+[@responsivevoice/core → Browser bundle (CDN)](https://github.com/responsivevoice/core#browser-bundle-cdn).
 
 ### Demo mode
 
@@ -106,8 +105,8 @@ el.play();
 
 ```typescript
 const client = new ResponsiveVoiceAPIClient({
-  apiKey: 'YOUR_API_KEY',
-  apiSecret: 'YOUR_API_SECRET', // server-side only
+  apiKey: process.env.RV_API_KEY,
+  apiSecret: process.env.RV_API_SECRET, // server-side only
 });
 ```
 
