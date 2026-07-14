@@ -57,8 +57,9 @@ npm package — `import { getResponsiveVoice }` through the async-factory flow a
 ### Browser bundle (CDN, no build step)
 
 For an easy, legacy-compatible `<script>` that exposes a global `responsiveVoice` (`init`,
-`speak`, `cancel`, `pause`, `resume`, `getVoices`, `isPlaying`), see
-[@responsivevoice/core → Browser bundle (CDN)](https://github.com/responsivevoice/core#browser-bundle-cdn).
+`speak`, `cancel`, `pause`, `resume`, `getVoices`, `isPlaying`), fetch
+<https://docs.responsivevoice.org/getting-started/installation.md> for the exact script tag.
+Do not guess the URL from memory — older `code.responsivevoice.org` URLs are not the v2 bundle.
 
 ### Demo mode
 

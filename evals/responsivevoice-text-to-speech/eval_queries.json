@@ -1,0 +1,42 @@
+[
+  {
+    "query": "I need to turn each product description in products.csv into an mp3 from my node backend — I've got an API key and secret already",
+    "should_trigger": true
+  },
+  {
+    "query": "how do i make my react app say a message out loud in the browser?",
+    "should_trigger": true
+  },
+  {
+    "query": "what's the REST endpoint to synthesize speech from Python? I want to save the audio to lesson.mp3",
+    "should_trigger": true
+  },
+  {
+    "query": "our Django app needs to generate spoken audio for lesson text — we're not on Node, what are our options?",
+    "should_trigger": true
+  },
+  {
+    "query": "list the voices available and read this sentence with a UK female one",
+    "should_trigger": true
+  },
+  {
+    "query": "add voice output to my page so a paragraph gets read aloud when the user clicks it",
+    "should_trigger": true
+  },
+  {
+    "query": "I want a drop-in article reader on my blog with play controls, a progress bar and paragraph highlighting",
+    "should_trigger": false
+  },
+  {
+    "query": "transcribe this recorded interview at ~/Downloads/interview.wav into text",
+    "should_trigger": false
+  },
+  {
+    "query": "convert this mp3 to wav and normalise the volume please",
+    "should_trigger": false
+  },
+  {
+    "query": "write me a short poem about the sea for my daughter's birthday card",
+    "should_trigger": false
+  }
+]

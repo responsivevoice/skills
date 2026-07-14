@@ -1,6 +1,6 @@
 ---
-name: responsivevoice
-description: 'Install and run ResponsiveVoice text-to-speech in a browser, on a server, or from any language. Use when a task needs to speak text aloud, add TTS or voice output, read content out loud, integrate @responsivevoice/core or @responsivevoice/api-client, or call the ResponsiveVoice REST API from Python, Go, PHP, Java, or any other language. Native language SDKs are coming soon; until then use the REST API.'
+name: responsivevoice-text-to-speech
+description: 'Install and run ResponsiveVoice text-to-speech in a browser, on a server, or from any language. Use when a task needs to speak text aloud, add TTS or voice output, read content out loud, integrate @responsivevoice/core or @responsivevoice/api-client, or call the ResponsiveVoice REST API from Python, Go, PHP, Java, or any other language. Native language SDKs are coming soon; until then use the REST API. For configuring the on-page web player UI, use the responsivevoice-web-player skill.'
 license: MIT
 metadata:
   author: responsivevoice
@@ -60,9 +60,9 @@ const rv = await getResponsiveVoice({ apiKey: 'YOUR_API_KEY' });
 rv.speak('Hello world', 'UK English Female');
 ```
 
-No build step? A prebuilt browser bundle is published — see
-[@responsivevoice/core → Browser bundle (CDN)](https://github.com/responsivevoice/core#browser-bundle-cdn)
-for the script-tag setup.
+No build step? A prebuilt browser bundle is published. Fetch
+<https://docs.responsivevoice.org/getting-started/installation.md> for the exact script tag —
+do not guess the URL from memory.
 
 ## Quickstart (server, REST API)
 
@@ -78,4 +78,14 @@ curl "https://texttospeech.responsivevoice.org/v2/text/synthesize?text=Hello+wor
 - Voice names are friendly strings like `UK English Female` / `US English Male`; the server
   resolves them. Pass `lang` (BCP-47, e.g. `pt-BR`) instead when you don't have a voice name.
 - Default audio is MP3. `pitch`, `rate`, `volume` accept `0.0`–`2.0` (`volume` `0.0`–`1.0`).
-- Docs: <https://docs.responsivevoice.org> · Spec: <https://texttospeech.responsivevoice.org/openapi.json>
+- On-page article player with controls and highlighting? Use the `responsivevoice-web-player` skill.
+- OpenAPI spec: <https://texttospeech.responsivevoice.org/openapi.json>
+
+## Fetching the docs
+
+Always read the ResponsiveVoice docs as Markdown, never HTML — append `.md` to any docs URL
+(<https://docs.responsivevoice.org/guides/voice-selection.md>). Start from:
+
+- <https://docs.responsivevoice.org/llms.txt> — index of every page.
+- <https://docs.responsivevoice.org/llms-full.txt> — the whole site in one file
+  (`llms-small.txt` abridged; `/_llms-txt/<section>.txt` per section).

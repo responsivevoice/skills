@@ -1,0 +1,42 @@
+[
+  {
+    "query": "I want a drop-in article reader on my blog with play controls, a progress bar and paragraph highlighting",
+    "should_trigger": true
+  },
+  {
+    "query": "the audio player on my site is reading the nav and the page title out loud — how do I make it only read the post body?",
+    "should_trigger": true
+  },
+  {
+    "query": "how do I add text to speech to my WordPress blog so readers can listen to posts?",
+    "should_trigger": true
+  },
+  {
+    "query": "my SPA fetches posts after load and the listen player never appears on them",
+    "should_trigger": true
+  },
+  {
+    "query": "restyle the article player to our brand green, hide the speed button and move the floating one to the bottom right",
+    "should_trigger": true
+  },
+  {
+    "query": "can I put the player inside a specific div instead of above the article element?",
+    "should_trigger": true
+  },
+  {
+    "query": "turn this paragraph into an mp3 file from my node backend and save it to disk",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the REST endpoint to synthesize speech from Python?",
+    "should_trigger": false
+  },
+  {
+    "query": "transcribe this recorded interview at ~/Downloads/interview.wav into text",
+    "should_trigger": false
+  },
+  {
+    "query": "write me a short poem about the sea for my daughter's birthday card",
+    "should_trigger": false
+  }
+]

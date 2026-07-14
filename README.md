@@ -22,13 +22,26 @@ directly into `~/.claude/skills/` or `.claude/skills/`.
 
 ## What's inside
 
-| Skill                                                | Teaches                                                          |
-| ---------------------------------------------------- | ---------------------------------------------------------------- |
-| [`responsivevoice`](skills/responsivevoice/SKILL.md) | Install + run TTS via the browser library, REST API, or the SDKs |
+| Skill                                                                              | Teaches                                                          |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| [`responsivevoice-text-to-speech`](skills/responsivevoice-text-to-speech/SKILL.md) | Install + run TTS via the browser library, REST API, or the SDKs |
+| [`responsivevoice-web-player`](skills/responsivevoice-web-player/SKILL.md)         | Add and configure the on-page article web player                 |
 
-The skill covers the browser library (`@responsivevoice/core`), the Node REST client
-(`@responsivevoice/api-client`), the REST API, and the Python/Go/PHP/Java SDKs — plus the
-demo / API-key / API-secret authentication model.
+`responsivevoice-text-to-speech` covers the browser library (`@responsivevoice/core`), the
+Node REST client (`@responsivevoice/api-client`), the REST API, and the Python/Go/PHP/Java
+SDKs — plus the demo / API-key / API-secret authentication model.
+
+`responsivevoice-web-player` covers the drop-in article reader — theme, layout, controls,
+mini-player, paragraph highlighting, narration exclusions, and imperative `mount()`.
+
+Skills install independently (`--skill <name>`), so each one stands alone rather than
+depending on another.
+
+## Conventions
+
+Every skill here ends with the same verbatim `## Fetching the docs` block, pointing agents at
+the Markdown docs (`.md` twin, `llms.txt`, `llms-full.txt`) instead of HTML. Carry it into any
+new skill unchanged.
 
 ## Links
 
