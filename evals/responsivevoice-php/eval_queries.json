@@ -1,0 +1,42 @@
+[
+  {
+    "query": "how do I call ResponsiveVoice from PHP to turn some text into an mp3 file?",
+    "should_trigger": true
+  },
+  {
+    "query": "add text to speech to my Laravel app and expose it as an artisan command",
+    "should_trigger": true
+  },
+  {
+    "query": "which composer package do I install to synthesize speech with ResponsiveVoice?",
+    "should_trigger": true
+  },
+  {
+    "query": "list the available voices for Australian English from a PHP script",
+    "should_trigger": true
+  },
+  {
+    "query": "my PHP synthesis call throws an ApiException with a 401, how do I pass the api key and secret?",
+    "should_trigger": true
+  },
+  {
+    "query": "add a drop-in article player with play controls and paragraph highlighting to my blog",
+    "should_trigger": false
+  },
+  {
+    "query": "speak this text in the browser with the web speech api",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the REST endpoint to synthesize speech from Python?",
+    "should_trigger": false
+  },
+  {
+    "query": "generate an mp3 from text in my node backend with the typescript client",
+    "should_trigger": false
+  },
+  {
+    "query": "write me a short poem about the sea for my daughter's birthday card",
+    "should_trigger": false
+  }
+]

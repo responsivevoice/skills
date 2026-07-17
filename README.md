@@ -20,16 +20,30 @@ Installs into any agent that reads filesystem skills — Claude Code, Cursor, Gi
 Gemini CLI, Cline, Windsurf, Codex, Zed, and more. The skill folder also works if copied
 directly into `~/.claude/skills/` or `.claude/skills/`.
 
+Install one skill instead of all of them with `--skill` (repeatable), or preview the choices
+with `--list`:
+
+```bash
+npx skills add responsivevoice/skills --skill responsivevoice-php   # one skill
+npx skills add responsivevoice/skills --skill '*'                   # all of them
+npx skills add responsivevoice/skills --list                        # preview, pick interactively
+```
+
 ## What's inside
 
-| Skill                                                                              | Teaches                                                          |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [`responsivevoice-text-to-speech`](skills/responsivevoice-text-to-speech/SKILL.md) | Install + run TTS via the browser library, REST API, or the SDKs |
-| [`responsivevoice-web-player`](skills/responsivevoice-web-player/SKILL.md)         | Add and configure the on-page article web player                 |
+| Skill                                                                              | Teaches                                                            |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [`responsivevoice-text-to-speech`](skills/responsivevoice-text-to-speech/SKILL.md) | Install + run TTS via the browser library, REST API, or the SDKs   |
+| [`responsivevoice-php`](skills/responsivevoice-php/SKILL.md)                       | Call TTS from PHP with the Composer SDK — framework-free + Laravel |
+| [`responsivevoice-web-player`](skills/responsivevoice-web-player/SKILL.md)         | Add and configure the on-page article web player                   |
 
 `responsivevoice-text-to-speech` covers the browser library (`@responsivevoice/core`), the
-Node REST client (`@responsivevoice/api-client`), the REST API, and the Python/Go/PHP/Java
-SDKs — plus the demo / API-key / API-secret authentication model.
+Node REST client (`@responsivevoice/api-client`), and the REST API — plus the demo /
+API-key / API-secret authentication model. It routes PHP tasks to `responsivevoice-php` and
+points at the REST API for languages whose native SDKs are not published yet.
+
+`responsivevoice-php` covers the official Composer SDK (`responsivevoice/sdk`) — installing
+it, synthesizing to an MP3, listing voices, and wiring it into Laravel.
 
 `responsivevoice-web-player` covers the drop-in article reader — theme, layout, controls,
 mini-player, paragraph highlighting, narration exclusions, and imperative `mount()`.

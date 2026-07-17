@@ -37,5 +37,6 @@ X-API-Key: $RV_API_KEY
 X-API-Secret: $RV_API_SECRET
 ```
 
-In the generated SDKs the two schemes are named `apiKeyHeader` and `apiSecretHeader` — see
-[sdks.md](sdks.md) for the exact per-language wiring.
+The SDKs send the same two headers. For the PHP wiring (`setApiKey('X-API-Key', …)` /
+`setApiKey('X-API-Secret', …)`), use the `responsivevoice-php` skill; see [sdks.md](sdks.md)
+for the SDK overview.

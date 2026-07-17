@@ -1,25 +1,26 @@
 ---
 name: responsivevoice-text-to-speech
-description: 'Install and run ResponsiveVoice text-to-speech in a browser, on a server, or from any language. Use when a task needs to speak text aloud, add TTS or voice output, read content out loud, integrate @responsivevoice/core or @responsivevoice/api-client, or call the ResponsiveVoice REST API from Python, Go, PHP, Java, or any other language. Native language SDKs are coming soon; until then use the REST API. For configuring the on-page web player UI, use the responsivevoice-web-player skill.'
+description: 'Install and run ResponsiveVoice text-to-speech in a browser, on a server, or from any language. Use when a task needs to speak text aloud, add TTS or voice output, read content out loud, integrate @responsivevoice/core or @responsivevoice/api-client, or call the ResponsiveVoice REST API from Python, Go, PHP, Java, or any other language. For PHP there is a native Composer SDK — use the responsivevoice-php skill; other languages use the REST API until their SDKs ship. For configuring the on-page web player UI, use the responsivevoice-web-player skill.'
 license: MIT
 metadata:
   author: responsivevoice
-  version: '1.1.0'
+  version: '1.2.0'
 ---
 
 # ResponsiveVoice Text-to-Speech
 
 ResponsiveVoice turns text into spoken audio. It ships as a browser library, a Node REST
-client, and a language-agnostic REST API that works from any language today. Native
-Python, Go, PHP, and Java SDKs are coming soon.
+client, and a language-agnostic REST API that works from any language today. PHP also has a
+native Composer SDK; Python, Go, and Java SDKs are coming soon.
 
 ## Choose your surface
 
-| You are building                                             | Use                                               | Reference                                                                                   |
-| ------------------------------------------------------------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| A web page that speaks in the browser                        | `@responsivevoice/core` (npm or CDN)              | [references/clients.md](references/clients.md)                                              |
-| A TypeScript/Node app, backend, or CLI that fetches audio    | `@responsivevoice/api-client` (browser or server) | [references/clients.md](references/clients.md)                                              |
-| A backend or CLI in another language (Python, Go, PHP, Java) | REST API directly (native SDKs soon)              | [references/rest-api.md](references/rest-api.md) · [references/sdks.md](references/sdks.md) |
+| You are building                                          | Use                                               | Reference                                                                                   |
+| --------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| A web page that speaks in the browser                     | `@responsivevoice/core` (npm or CDN)              | [references/clients.md](references/clients.md)                                              |
+| A TypeScript/Node app, backend, or CLI that fetches audio | `@responsivevoice/api-client` (browser or server) | [references/clients.md](references/clients.md)                                              |
+| A PHP or Laravel backend                                  | `responsivevoice/sdk` (Composer)                  | `responsivevoice-php` skill · [references/sdks.md](references/sdks.md)                      |
+| A backend or CLI in another language (Python, Go, Java)   | REST API directly (native SDKs soon)              | [references/rest-api.md](references/rest-api.md) · [references/sdks.md](references/sdks.md) |
 
 ## Authentication (read before installing)
 

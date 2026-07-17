@@ -45,8 +45,9 @@ voice in mind.
 
 ## From a programming language
 
-The endpoint returns raw audio bytes, so any HTTP client writes a file. Native language
-SDKs are coming soon; until then call the REST API directly. Python example:
+The endpoint returns raw audio bytes, so any HTTP client writes a file. PHP has a native
+Composer SDK (see [sdks.md](sdks.md)); from every other language call the REST API directly.
+Python example:
 
 ```python
 import os
